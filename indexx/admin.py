@@ -1,5 +1,5 @@
 from django.contrib import admin
-from indexx.models import Bot, Habilidade
+from indexx.models import Bot, Habilidades
 
 
 #   ADICIONANDO LIST_DISPLAY PARA COLOCAR VALORES E SEUS CABEÇALHOS
@@ -16,7 +16,7 @@ class HabilidadeView(admin.ModelAdmin):
 
 #   DECLARANDO A TABELA NO ADMIN
 admin.site.register(Bot, BotView)
-admin.site.register(Habilidade, HabilidadeView)
+admin.site.register(Habilidades, HabilidadeView)
 
 #   USUARIO ADMIN
 #   master masterpass master@master.com

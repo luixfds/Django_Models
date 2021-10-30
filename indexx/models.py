@@ -1,3 +1,5 @@
+from importlib._common import _
+
 from django.db import models
 
 
@@ -32,7 +34,7 @@ class Bot(models.Model):
         return self.nome
 
 
-class Habilidade(models.Model):
+class Habilidades(models.Model):
     nome = models.CharField(max_length=20)
     descricao = models.TextField()
     valor = models.DecimalField(max_digits=6, decimal_places=2)
@@ -53,5 +55,10 @@ class Habilidade(models.Model):
     #   DEFAULT TU USA CASO QUEIRA COLOCAR UM VALOR PADRAO PARA OS NAO INSERIDOS
     status = models.CharField(max_length=20, choices=setStatus, default=default)
 
+    #   COLOCAR O NOME NO PLURAL DA TABELA PARA QUE ELE NAO COLOQUE O NOME PADRÃO COM S NO FINAL
+    class Meta:
+        verbose_name_plural = 'Habilidades'
+
+    #   MOSTRAR O CAMPO DE VALORES POR NOME E NAO POR OBJECT1
     def __str__(self):
         return self.nome
