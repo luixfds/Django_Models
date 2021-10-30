@@ -1,17 +1,22 @@
 from django.contrib import admin
-from indexx.models import User, Produto
+from indexx.models import Bot, Habilidade
 
 
 #   ADICIONANDO LIST_DISPLAY PARA COLOCAR VALORES E SEUS CABEÇALHOS
 #   ADICIONANDO LIST_FILTER PARA COLOCAR CAIXA DE FILTRO
-class UserView(admin.ModelAdmin):
-    list_display = ('name', 'data_criacao')
-    list_filter = ('name', 'data_criacao', )
+class BotView(admin.ModelAdmin):
+    list_display = ('apelido', 'data_criacao', 'status')
+    list_filter = ('status',)
 
-class ProdutoView(admin.ModelAdmin):
-    list_display = ('name','valor', 'quantidade')
-    list_filter = ('name',)
+
+class HabilidadeView(admin.ModelAdmin):
+    list_display = ('nome', 'valor', 'quantidade')
+    list_filter = ('status', )
+
 
 #   DECLARANDO A TABELA NO ADMIN
-admin.site.register(User, UserView)
-admin.site.register(Produto, ProdutoView)
+admin.site.register(Bot, BotView)
+admin.site.register(Habilidade, HabilidadeView)
+
+#   USUARIO ADMIN
+#   master masterpass master@master.com
